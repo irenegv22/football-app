@@ -1,8 +1,30 @@
 <div class= "w-full max-w-md w-full mx-auto bg-white shadow-md rounded-md px-6 py-4 my-6">
     <ul class= "card-body">
-        <li *ngFor= "let player of players" class= "flex items-center ml-2">
+        <li (click) ="editPlayer(player)"
+        *ngFor= "let player of players" class= "flex items-center ml-2">
+            <button (click) = "remove(player.name)" > Borrrar </button>
             {{player.name}}
        </li>
        
     </ul>
+</div>
+<div class= "w-full max-w-md w-full mx-auto bg-white shadow-md rounded-md px-6 py-4 my-6">
+    <div class= "card-body">
+        <div class= "flex items-center ml-2">
+            Añade un nuevo jugador
+        </div>
+        <div class="flex items-center ml-2 my-6">
+            <input type="text" (keyup.enter) ="add()" [(ngModel)]="inputName" placeholder="Nombre del jugador">
+        </div>
+        <div class="flex items-center ml-2 my-6">
+            <input type="text" (keyup.enter) ="add()" [(ngModel)]="inputId" placeholder="Id del jugador">
+        </div>
+        <div class="flex items-center ml-2 my-6">
+            <input type="text" (keyup.enter) ="add()" [(ngModel)]="inputAvatar" placeholder="Foto del jugador">
+        </div>
+        <div class="flex items-center ml-2 my-6">
+            <input type="text" (keyup.enter) ="add()" [(ngModel)]="inputTeamId" placeholder="Equipo del jugador">
+        </div>
+    </div>
+    <button (click)="add()"> Añadir </button>
 </div>
