@@ -8,6 +8,7 @@ import { TeamsComponent } from './components/teams/teams.component';
 import { PlayersComponent } from './components/players/players.component';
 import { NewPlayerComponent } from './components/new-player/new-player.component';
 import { NewTeamComponent } from './components/new-team/new-team.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { NewTeamComponent } from './components/new-team/new-team.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
