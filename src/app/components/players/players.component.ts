@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Player } from 'src/app/interfaces/interfaces';
 
 @Component({
   selector: 'app-players',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./players.component.css']
 })
 export class PlayersComponent implements OnInit {
+  
+  players: Player[] = [
+    {name: "Paco", id: "4", avatar: "hola", teamId: "team1"},
+    {name: "Juan", id: "5", avatar: "hola2", teamId: "team2"}
+  ];
 
-  constructor() { }
+
+  constructor() {}
 
   ngOnInit(): void {
   }
