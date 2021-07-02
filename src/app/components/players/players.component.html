@@ -1,6 +1,8 @@
-<div class= "w-full max-w-md w-full mx-auto bg-white shadow-md rounded-md px-6 py-4 my-6">
+<app-search (search)="handleSeach($event)"> </app-search>
+
+ <div class= "w-full max-w-md w-full mx-auto bg-white shadow-md rounded-md px-6 py-4 my-6">
     <ul class= "card-body">
-        <li (click) ="editPlayer(player)"
+        <li (click) ="edit(player)"
         *ngFor= "let player of players" class= "flex items-center ml-2">
             <button (click) = "remove(player.name)" > Borrrar </button>
             {{player.name}}
