@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { PlayersComponent } from './components/players/players.component';
+import { NewPlayerComponent } from './components/new-player/new-player.component';
+import { NewTeamComponent } from './components/new-team/new-team.component';
 
 
 @NgModule({
@@ -14,6 +16,8 @@ import { PlayersComponent } from './components/players/players.component';
     NavbarComponent,
     TeamsComponent,
     PlayersComponent,
+    NewPlayerComponent,
+    NewTeamComponent,
   ],
   imports: [
     BrowserModule,
