@@ -13,7 +13,7 @@ export class PlayersComponent implements OnInit {
   //Players inputs
   inputName:string= "";
   inputId: string ="";
-  inputAvatar: string="";
+  inputavatar: string="";
   inputTeamId: string ="";
 
   //Boolean to know if you edit a player and if so remove the old one
@@ -38,10 +38,10 @@ export class PlayersComponent implements OnInit {
   };
   
   add() {
-    this.players.push({name:this.inputName, id:this.inputId, avatar:this.inputAvatar, teamId:this.inputTeamId});
+    this.players.push({name:this.inputName, id:this.inputId, avatar:this.inputavatar, teamId:this.inputTeamId});
     this.inputName = "";
     this.inputId = "";
-    this.inputAvatar = "";
+    this.inputavatar = "";
     this.inputTeamId = "";
   };
 
@@ -52,7 +52,7 @@ export class PlayersComponent implements OnInit {
   edit(player:Player){
     this.inputName = player.name;
     this.inputId = player.id;
-    this.inputAvatar = player.avatar;
+    this.inputavatar = player.avatar;
     this.inputTeamId = player.teamId;
   }
 

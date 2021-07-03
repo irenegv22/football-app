@@ -17,7 +17,7 @@ export class NewPlayerComponent implements OnInit {
   //Players inputs
   inputName:string= "";
   inputId: string ="";
-  inputAvatar: string="";
+  inputavatar: string="";
   inputTeamId: string ="";
 
   // player:Player= {name:"",id:"", avatar:"", teamId:""};
@@ -28,10 +28,10 @@ export class NewPlayerComponent implements OnInit {
   }
 
   add() {
-    this.players.push({name:this.inputName, id:this.inputId, avatar:this.inputAvatar, teamId:this.inputTeamId});
+    this.players.push({name:this.inputName, id:this.inputId, avatar:this.inputavatar, teamId:this.inputTeamId});
     this.inputName = "";
     this.inputId = "";
-    this.inputAvatar = "";
+    this.inputavatar = "";
     this.inputTeamId = "";
   };
 
