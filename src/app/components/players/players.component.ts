@@ -23,6 +23,9 @@ export class PlayersComponent implements OnInit {
 
   //Add Player
   visible:boolean = false;
+
+  // Info Player
+  visibleInfo:boolean = false;
  
   // Search input
   filter_value = "";
@@ -42,6 +45,11 @@ export class PlayersComponent implements OnInit {
   //Add Player
   showhideUtility(){
     this.visible = this.visible?false:true;
+  }
+
+  //Info Player
+  showInfo(){
+    this.visibleInfo = this.visibleInfo?false:true;
   }
 
   // CRUD functions
