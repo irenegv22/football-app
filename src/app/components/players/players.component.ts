@@ -16,10 +16,13 @@ export class PlayersComponent implements OnInit {
   inputavatar: string="";
   inputTeamId: string ="";
 
-  //Boolean to know if you edit a player and if so remove the old one
-  editAndRemove:boolean = false;
+  players: Player[] = [
+    //  {name: "Paco", id: "4", avatar: "hola", teamId: "team1"},
+    //  {name: "Juan", id: "5", avatar: "hola2", teamId: "team2"}
+  ];
 
-  // player:Player= {name:"",id:"", avatar:"", teamId:""};
+  // Search input
+  filter_value = "";
 
   constructor(private _http:HttpClient) { }
 
@@ -28,15 +31,12 @@ export class PlayersComponent implements OnInit {
      .subscribe(jugadores => this.players = jugadores)
   }
 
-  players: Player[] = [
-    //  {name: "Paco", id: "4", avatar: "hola", teamId: "team1"},
-    //  {name: "Juan", id: "5", avatar: "hola2", teamId: "team2"}
-  ];
-
+  //Filter_Seach functions
   handleSeach(value:string){
-    console.log(value);
+    this.filter_value = value;
   };
-  
+
+  // CRUD functions
   add() {
     this.players.push({name:this.inputName, id:this.inputId, avatar:this.inputavatar, teamId:this.inputTeamId});
     this.inputName = "";
