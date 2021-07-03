@@ -1,11 +1,19 @@
 <app-search (search)="handleSeach($event)"> </app-search>
-<div class="max-w-md px-6 py-0 my-2"> Añadir Jugador </div>
 
-<div class= "w-full max-w-md w-full mx-auto bg-white shadow-md rounded-md px-6 py-4 my-6">
+<!-- Botón añadir Jugador -->
+<button class="max-w-md px-6 py-0 my-2 text-grey-300" (click)="showhideUtility()">
+    Añadir o Editar Jugador
+</button> 
+
+<!-- Formulario con condición añadir/editar Jugador -->
+ <div *ngIf="visible" class= "w-full max-w-md w-full mx-auto bg-white shadow-md rounded-md px-6 py-4 my-6">
     <div class= "card-body">
         <div class= "flex items-center ml-2">
-            Añade un nuevo jugador
+            Añade un nuevo jugador o editalo apretando sobre el
         </div>
+        <!-- <div class= "flex items-center ml-2">
+            Si lo editas debes 
+        </div> -->
         <div class="flex items-center ml-2 my-6">
             <input type="text" (keyup.enter) ="add()" [(ngModel)]="inputName" placeholder="name">
         </div>
@@ -20,7 +28,8 @@
         </div>
     </div>
     <button (click)="add()"> Añadir </button>
-</div>
+</div> 
+
 
 <div class= "container px-6 mx-auto grid">
         <ul class= "grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">

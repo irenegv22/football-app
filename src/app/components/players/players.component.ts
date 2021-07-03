@@ -21,6 +21,9 @@ export class PlayersComponent implements OnInit {
     //  {name: "Juan", id: "5", avatar: "hola2", teamId: "team2"}
   ];
 
+  //Add Player
+  visible:boolean = false;
+ 
   // Search input
   filter_value = "";
 
@@ -35,6 +38,11 @@ export class PlayersComponent implements OnInit {
   handleSeach(value:string){
     this.filter_value = value;
   };
+
+  //Add Player
+  showhideUtility(){
+    this.visible = this.visible?false:true;
+  }
 
   // CRUD functions
   add() {

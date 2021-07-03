@@ -1,1 +1,45 @@
-<p>teams works!</p>
+<app-search (search)="handleSeach($event)"> </app-search>
+
+<!-- Botón añadir Equipo -->
+<button class="max-w-md px-6 py-0 my-2 text-grey-300" (click)="showhideUtility()">
+    Añadir o Editar Equipo
+</button> 
+
+<!-- Formulario con condición añadir/editar Equipo -->
+ <div *ngIf="visible" class= "w-full max-w-md w-full mx-auto bg-white shadow-md rounded-md px-6 py-4 my-6">
+    <div class= "card-body">
+        <div class= "flex items-center ml-2">
+            Añade un nuevo equipo
+        </div>
+        <div class="flex items-center ml-2 my-6">
+            <input type="text" (keyup.enter) ="add()" [(ngModel)]="inputName" placeholder="Nombre del equipo">
+        </div>
+        <div class="flex items-center ml-2 my-6">
+            <input type="text" (keyup.enter) ="add()" [(ngModel)]="inputId" placeholder="Id del equipo">
+        </div>
+        <div class="flex items-center ml-2 my-6">
+            <input type="text" (keyup.enter) ="add()" [(ngModel)]="inputLogo" placeholder="Escudo del equipo">
+        </div>
+        <div class="flex items-center ml-2 my-6">
+            <input type="text" (keyup.enter) ="add()" [(ngModel)]="inputLiga" placeholder="Liga del equipo">
+        </div>
+    </div>
+    <button (click)="add()"> Añadir </button>
+</div> 
+
+
+<div class= "container px-6 mx-auto grid">
+        <ul class= "grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
+            <li (click) ="edit(team)"
+            *ngFor= "let team of teams">
+                <div class= "mx-auto bg-white shadow-md rounded-md px-4 py-4 my-4">
+                    <!-- <img src= {{team.Logo}}> -->
+                    <div class="mb-2 text-sm font-medium text-gray-600">ID: {{team.id}} </div>
+                    <button (click) = "remove(team.id)" class="align-right text-red-400" > Borrrar </button>
+                </div>
+            </li>
+       
+         </ul>
+</div>
+
+<!-- | teamSearch:filter_value -->
