@@ -1,11 +1,19 @@
 <app-search (search)="handleSeach($event)"> </app-search>
-<div class="max-w-md px-6 py-0 my-2"> Añadir Jugador </div>
 
-<div class= "hidden w-full max-w-md w-full mx-auto bg-white shadow-md rounded-md px-6 py-4 my-6">
+<!-- Botón añadir Jugador -->
+<button class="max-w-md px-6 py-0 my-2 text-grey-300" (click)="showhideUtility()">
+    Añadir o Editar Jugador
+</button> 
+
+<!-- Formulario con condición añadir/editar Jugador -->
+ <div *ngIf="visible" class= "w-full max-w-md w-full mx-auto bg-white shadow-md rounded-md px-6 py-4 my-6">
     <div class= "card-body">
         <div class= "flex items-center ml-2">
-            Añade un nuevo jugador
+            Añade un nuevo jugador o editalo apretando sobre el
         </div>
+        <!-- <div class= "flex items-center ml-2">
+            Si lo editas debes 
+        </div> -->
         <div class="flex items-center ml-2 my-6">
             <input type="text" (keyup.enter) ="add()" [(ngModel)]="inputName" placeholder="name">
         </div>
@@ -20,15 +28,24 @@
         </div>
     </div>
     <button (click)="add()"> Añadir </button>
-</div>
+</div> 
+
 
 <div class= "container px-6 mx-auto grid">
         <ul class= "grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
             <li (click) ="edit(player)"
             *ngFor= "let player of players | search:filter_value">
                 <div class= "mx-auto bg-white shadow-md rounded-md px-4 py-4 my-4">
-                    <div class="mb-2 text-sm font-medium text-gray-600">{{player.id}} </div>
-                    <button (click) = "remove(player.name)" class="align-right text-red-400" > Borrrar </button>
+                    <img src= {{player.Avatar}} height="2px">
+                    <div class="mb-2 text-sm font-medium text-gray-600">ID: {{player.id}} </div>
+                    <button (click) = "remove(player.id)" class="align-right text-red-400 my-4 mx-4" > Borrrar </button>
+                    <button (click) = "showInfo()" class="align-right text-grey-400 my-4 mx-8" > Info </button>
+                        <div *ngIf="visibleInfo" class= "mx-auto bg-grey-200 shadow-md rounded-md px-4 py-4 my-4">
+                            <div> Nombre: {{player.name}} </div>
+                            <div> ID: {{player.id}} </div>
+                            <div> URL Imagen: {{player.Avatar}} </div>
+                            <div> Team Id: {{player.teamId}} </div>
+                        </div>
                 </div>
             </li>
        

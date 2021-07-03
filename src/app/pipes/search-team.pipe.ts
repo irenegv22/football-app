@@ -1,12 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'search'
+  name: 'searchTeam'
 })
-export class PipesPipe implements PipeTransform {
+export class SearchTeamPipe implements PipeTransform {
 
   transform(list: any[], text: string): any[] {
     if(!text) return list;
-    return list.filter(player => player.id.includes(text))
+    return list.filter(team => team.id.includes(text))
   }
+  
 }
+

@@ -21,6 +21,12 @@ export class PlayersComponent implements OnInit {
     //  {name: "Juan", id: "5", avatar: "hola2", teamId: "team2"}
   ];
 
+  //Add Player
+  visible:boolean = false;
+
+  // Info Player
+  visibleInfo:boolean = false;
+ 
   // Search input
   filter_value = "";
 
@@ -36,9 +42,19 @@ export class PlayersComponent implements OnInit {
     this.filter_value = value;
   };
 
+  //Add Player
+  showhideUtility(){
+    this.visible = this.visible?false:true;
+  }
+
+  //Info Player
+  showInfo(){
+    this.visibleInfo = this.visibleInfo?false:true;
+  }
+
   // CRUD functions
   add() {
-    this.players.push({name:this.inputName, id:this.inputId, avatar:this.inputavatar, teamId:this.inputTeamId});
+    this.players.push({name:this.inputName, id:this.inputId, Avatar:this.inputavatar, teamId:this.inputTeamId});
     this.inputName = "";
     this.inputId = "";
     this.inputavatar = "";
@@ -46,13 +62,13 @@ export class PlayersComponent implements OnInit {
   };
 
   remove(nombreJugador : string){
-    this.players = this.players.filter(player => player.name != nombreJugador)
+    this.players = this.players.filter(player => player.id != nombreJugador)
   };
 
   edit(player:Player){
     this.inputName = player.name;
     this.inputId = player.id;
-    this.inputavatar = player.avatar;
+    this.inputavatar = player.Avatar;
     this.inputTeamId = player.teamId;
   }
 

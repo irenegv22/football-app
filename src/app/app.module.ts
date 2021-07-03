@@ -7,8 +7,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { PlayersComponent } from './components/players/players.component';
-import { NewPlayerComponent } from './components/new-player/new-player.component';
-import { NewTeamComponent } from './components/new-team/new-team.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -18,6 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { SearchComponent } from './components/search/search.component';
 import { PipesPipe } from './pipes/pipes.pipe';
+import { SearchTeamPipe } from './pipes/search-team.pipe';
 
 
 
@@ -27,10 +26,9 @@ import { PipesPipe } from './pipes/pipes.pipe';
     NavbarComponent,
     TeamsComponent,
     PlayersComponent,
-    NewPlayerComponent,
-    NewTeamComponent,
     SearchComponent,
     PipesPipe,
+    SearchTeamPipe,
   ],
   imports: [
     BrowserModule,
