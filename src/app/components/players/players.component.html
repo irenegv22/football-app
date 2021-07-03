@@ -1,7 +1,7 @@
 <app-search (search)="handleSeach($event)"> </app-search>
 <div class="max-w-md px-6 py-0 my-2"> Añadir Jugador </div>
 
-<div class= "hidden w-full max-w-md w-full mx-auto bg-white shadow-md rounded-md px-6 py-4 my-6">
+<div class= "w-full max-w-md w-full mx-auto bg-white shadow-md rounded-md px-6 py-4 my-6">
     <div class= "card-body">
         <div class= "flex items-center ml-2">
             Añade un nuevo jugador
@@ -27,8 +27,9 @@
             <li (click) ="edit(player)"
             *ngFor= "let player of players | search:filter_value">
                 <div class= "mx-auto bg-white shadow-md rounded-md px-4 py-4 my-4">
-                    <div class="mb-2 text-sm font-medium text-gray-600">{{player.id}} </div>
-                    <button (click) = "remove(player.name)" class="align-right text-red-400" > Borrrar </button>
+                    <img src= {{player.Avatar}} height="2px">
+                    <div class="mb-2 text-sm font-medium text-gray-600">ID: {{player.id}} </div>
+                    <button (click) = "remove(player.id)" class="align-right text-red-400" > Borrrar </button>
                 </div>
             </li>
        

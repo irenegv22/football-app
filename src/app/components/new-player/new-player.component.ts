@@ -10,8 +10,8 @@ import { Player } from 'src/app/interfaces/interfaces';
 })
 export class NewPlayerComponent implements OnInit {
   players: Player[] = [
-    {name: "Paco", id: "4", avatar: "hola", teamId: "team1"},
-    {name: "Juan", id: "5", avatar: "hola2", teamId: "team2"}
+    {name: "Paco", id: "4", Avatar: "hola", teamId: "team1"},
+    {name: "Juan", id: "5", Avatar: "hola2", teamId: "team2"}
   ];
 
   //Players inputs
@@ -28,7 +28,7 @@ export class NewPlayerComponent implements OnInit {
   }
 
   add() {
-    this.players.push({name:this.inputName, id:this.inputId, avatar:this.inputavatar, teamId:this.inputTeamId});
+    this.players.push({name:this.inputName, id:this.inputId, Avatar:this.inputavatar, teamId:this.inputTeamId});
     this.inputName = "";
     this.inputId = "";
     this.inputavatar = "";
