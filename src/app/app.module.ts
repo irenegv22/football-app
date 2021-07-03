@@ -16,6 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { SearchComponent } from './components/search/search.component';
 import { PipesPipe } from './pipes/pipes.pipe';
+import { SearchTeamPipe } from './pipes/search-team.pipe';
 
 
 
@@ -27,6 +28,7 @@ import { PipesPipe } from './pipes/pipes.pipe';
     PlayersComponent,
     SearchComponent,
     PipesPipe,
+    SearchTeamPipe,
   ],
   imports: [
     BrowserModule,
